@@ -1,0 +1,151 @@
+
+
+body{
+
+	min-height: 100%;
+	display:flex;
+	flex-direction: column;
+	align-items: stretch;
+}
+h1{
+	text-align: center;
+	font-family: rooney-sans,sans-serif;
+    font-weight: 800;
+    font-style: bold;
+    font-size: 4em;
+
+}
+h2{
+	height: 60px;
+	margin: 5px;
+	text-align: center;
+    font-family: rooney-sans,sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 3em;
+}
+h3{
+	font-family: rooney-sans,sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 2em;
+}
+
+a[href]{
+	font-family: rooney-sans,sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 14pt;
+    color: #f2f2f2;
+    text-decoration-style: none;
+}
+
+p{
+	font-family: rooney-sans,sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 14pt;
+    color: #f2f2f2;
+    text-decoration-style: none;
+}
+
+nav{
+	display: flex;
+	flex-direction:row;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	margin-right:0px;
+	background-color: #F3AB94;
+	font-family: rooney-sans,sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16pt;
+    color: #f2f2f2;
+}
+
+nav a{
+	padding: 1em;
+	color: white;
+	text-decoration: none;
+}
+
+body{
+
+	min-height: 100%;
+	display:flex;
+	flex-direction: column;
+	align-items: stretch;
+}
+
+#overview{
+	text-align: center;
+}
+
+
+#recipe1{
+	background-color: #bc4c3e;
+	text-align: center;
+	padding:50px;
+}
+#recipe1 h2{
+	color: #411511;
+	margin-bottom: 40px;
+}
+#recipe1 h3{
+	background-color: #050505;
+	color: #f2f2f2;
+	padding:20px 30px;
+	margin:40px auto;
+	width:500px;
+	border-radius: 10px;
+}
+
+
+#recipe2{
+	background-color: #f6c5a6;
+	text-align: center;
+	padding:50px;
+}
+#recipe2 h2{
+	color: #bc4c3e;
+	margin-bottom: 40px;
+}
+#recipe2 h3{
+	background-color: #050505;
+	color: #f2f2f2;
+	padding:20px 30px;
+	margin:40px auto;
+	width:500px;
+	border-radius: 10px;
+}
+
+
+#recipe3{
+	background-color: #f4d4c3;
+	text-align: center;
+	padding:50px;
+}
+#recipe3 h2{
+	color: #bc4c3e;
+	margin-bottom: 40px;
+}
+#recipe3 h3{
+	background-color: #050505;
+	color: #f2f2f2;
+	padding:20px 30px;
+	margin:40px auto;
+	width:500px;
+	border-radius: 10px;
+}
+
+img{
+	border-radius: 20px;
+}
+ul {
+	list-style-type: none;
+}
+
+footer p{
+
+	color:black;
+}
