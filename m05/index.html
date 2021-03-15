@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>CSSS StyleGuide</title>
+
+	<link rel="stylesheet" type="text/css" href="../lib/css/gridsystem.css">
+	<link rel="stylesheet" type="text/css" href="../lib/css/styleguide.css">
+	<link rel="stylesheet" type="text/css" href="../css/storetheme.css">
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+	<header class="container">
+		<h1>CSS Style Guide</h1>
+	
+        <div class="card card-light">
+	        <nav class="nav">
+		       <ul>
+			      <li><a href="#typography">Typography</a></li>
+			      <li><a href="#images">Images</a></li>
+			      <li><a href="#cards">Cards</a></li>
+			      <li><a href="#viewwindow">View Window</a></li>
+			      <li><a href="#navs">Navs</a></li>
+			      <li><a href="#tables">Tables</a></li>
+			      <li><a href="#forms">Forms</a></li>
+			      <li><a href="#grid">Grid</a></li>
+			      <li><a href="#flex">Flex</a></li>
+		       </ul>
+	        </nav>
+        </div>
+    </header>
+
+    <section id="typoraphy">
+        <div class="container">
+        <h2>Typography</h2>
+        <p class="heading">This is the heading typography</p>
+        <p class="body">This is the body typography</p>
+        </div>
+    </section>
+
+    <section id="background">
+        <div class="container">
+        <h2>Background color</h2>
+        <div class="background1">
+            <h3>Background light</h3>
+        </div>
+        <div class="background2">
+            <h3>Background dark</h3>
+        </div>
+        </div>
+    </section>
+
+	<section id="navs">
+		<script>
+		const makeNav = (classes='') => {
+			const links = ["home","store","about"];
+			let ran = Math.floor(Math.random()*links.length);
+			return `
+			<div class="card card-light">
+			    <nav class="${classes}">
+                    <ul>
+                        ${links.reduce((r,o,i)=>r+`<li ${i==ran&&`class="active"`}><a href="#">${o}
+                        	</a></li>`,"")}
+                    </ul>
+                </nav>
+            </div>`;
+         }
+		</script>
+		<div class="container">
+
+
+            <h2>Navs</h2>
+            <script>document.write(makeNav("nav-pills"));</script>
+
+            <script>document.write(makeNav("nav-material"));</script>
+
+	    </div>
+
+        
+        <script>
+        	$(()=>{
+        		$("[class*='nav'] a").on("click",function(e){
+        			console.log("honk")
+        			e.preventDefault();
+        			$(this).closest("li").addClass("active")
+        			    .siblings().removeClass("active");
+        		})
+        	})
+        </script>
+	</section>
+
+    <section id="cards">
+        <div class="container productcard">
+            <img src="img/cabdkes1.png" alt="candle" style="width:100%">
+            <h4>Voluspa Maison Glass Candle</h4>
+            <p class="price">$30.28</p>
+            <p>Fresh Cantaloupe Hibiscus</p>
+            <p><button>Add to Cart</button></p>
+
+        </div>
+    </section>
+
+	<section id="tables">
+		<script>
+			const makeTable = (classes='') =>{
+                  const head = ["id", "name", "email", "phone"];
+                  const body = [
+                          [1,"Aberline", "aberlin.77@gmial.com", "919-787-2654"],
+                          [2,"Chloe", "Chloe.hu@gmail.com", "646-362-3578"],
+                          [3,"Aberline", "aberlin.77@gmial.com", "919-787-2654"],
+                          [4,"Chloe", "Chloe.hu@gmail.com", "646-362-3578"],
+                          [5,"Aberline", "aberlin.77@gmial.com", "919-787-2654"],
+                          [6,"Chloe", "Chloe.hu@gmail.com", "646-362-3578"]
+
+                  ];
+                  return`
+                  <div class="container">
+                    <div class="card card-light">
+                    <table class="${classes}">
+                           <thead><tr>${head.reduce((r,o)=>r+`<th>${o}</th>`,"")}
+                                </tr>
+                           </thead>
+                           <tbody>${body.reduce((r,o)=>r+`<tr>${o.reduce((r,o)=>r+`<td>${o}</td>`,"")}</tr>`,"")}
+                           </tbody>
+                    </table>
+                    </div>
+                  </div>`;
+
+			}
+		</script>
+
+		<div class="card card-medium card-flat">
+			<div class="container">
+				<h2>Tables</h2>
+			</div>
+		</div>
+
+			<div class="container">
+
+				<script>document.write(makeTable("table striped"));</script>
+
+			</div>
+
+	</section>
+
+	<section id="forms">
+		<div class="card card-medium card-flat">
+			<div class="container">
+				<h2>Forms</h2>
+			</div>
+        </div>
+        <div class="container">
+        	<p>Forms are cool.</p>
+
+        	<h3>Input</h3>
+
+        	<div class="card card-light">
+        		<input type="text" class="form-input" placeholder="Input">
+        	</div>
+
+        	<h3>Select</h3>
+
+        	<div class="card card-light">
+        		<div class="form-select">
+        			<select name="amount">
+        				<option >1</option>
+        				<option >2</option>
+        				<option >3</option>
+        				<option >4</option>
+        				<option >5</option>
+        				<option >6</option>
+        				<option >7</option>
+        				<option >8</option>
+        				<option >9</option>
+        				<option >10</option>
+        			</select>
+        		</div>
+        	</div>
+
+        	<h3>Checboxes</h3>
+        	<div class="card card-light">
+        		<div>
+        			<input type="checkbox" id="checkmark-1" class="hidden">
+        			<label for="checkmark-1" class="checkmark"></label>
+        		</div>
+
+        		<div>
+        			<input type="checkbox" id="toggle-1" class="hidden">
+        			<label for="toggle-1" class="toggle"></label>
+        		</div>
+
+        		<div>
+        			<input type="checkbox" id="toggle-2" class="hidden">
+        			<label for="toggle-2" class="toggle" style="font-size:2em;"></label>
+        		</div>
+
+        	</div>
+
+        	<h3>Radio Groups</h3>
+        	<div class="card card-light">
+        		<div>
+        			<input type="radio" id="radio-2-1" class="hidden" name="radio-2">
+        			<label for="radio-2-1" class="radio-group"></label>
+
+        			<input type="radio" id="radio-2-2" class="hidden" name="radio-2">
+        			<label for="radio-2-2" class="radio-group"></label>
+
+        			<input type="radio" id="radio-2-3" class="hidden" name="radio-2">
+        			<label for="radio-2-3" class="radio-group"></label>
+        		</div>
+        	</div>
+
+        	<h3>Button</h3>
+        	<div class="card card-light">
+        		<div class="grid gap">
+        			<div class="col-xs-12 col-md-3">
+        				<input type="botton" class="form-botton" value="Qty">
+        			</div>
+        			<div class="col-xs-12 col-md-3">
+        				<input type="submit" class="form-botton" value="submit">
+        			</div>
+                    <div class="col-xs-12 col-md-3">
+                        <button type="-" class="round-button">-</button>
+                    </div>
+                    <div class="col-xs-12 col-md-3">
+                        <button type="+" class="round-button">+</button>
+                    </div>
+        			<div class="col-xs-12 col-md-3">
+        				<button type="submit" class="form-button">Button</button>
+        			</div>
+        			<div class="col-xs-12 col-md-3">
+        				<a href="#" class="form-button">Anchor</a>
+        			</div>
+        		</div>
+        	</div>
+
+        	<h3>Labels</h3>
+        	<div class="card card-light">
+        		<label for="input-1" class="form-label">Input</label>
+        		<input type="text" id="input-1" class="form-input" placeholder="Input">
+        	</div>
+
+        	<h3>Control</h3>
+        	<div class="card card-light">
+        		<div class="form-control">
+        			<label for="input-1" class="form-label">Username</label>
+        			<input type="text" id="input-1" class="form-input" placeholder="Input">
+        		</div>
+        		<div class="form-control">
+        			<label for="input-2" class="form-label">Password</label>
+        			<input type="text" id="input-2" class="form-input" placeholder="Password">
+        		</div>
+        	</div>
+
+        	<h3>Search</h3>
+        	<div class="card card-light">
+        		<input type="search" class="hotdog" placeholder="Search Hotdog">
+        	</div>
+
+        	<h3>Coloring</h3>
+
+        	<div class="card card-light">
+        		<div class="grid gap">
+        			<div class="col-xs-12 col-md-4">
+        				<button type="submit" class="form-button solid1">solid color 1</button>
+        			</div>
+        			<div class="col-xs-12 col-md-4">
+        				<button type="submit" class="form-button solid2">solid color 2</button>
+        			</div>
+        			<div class="col-xs-12 col-md-4">
+        				<button type="submit" class="form-button solid3">solid color 3</button>
+        			</div>
+                    <div class="col-xs-12 col-md-4">
+                        <button type="submit" class="form-button border1">border color 1</button>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                        <button type="submit" class="form-button border2">border color 2</button>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                        <button type="submit" class="form-button border3">border color 3</button>
+                    </div>
+        		</div>
+        	</div>
+        </div>
+
+	</section>	
+</body>
+</html>

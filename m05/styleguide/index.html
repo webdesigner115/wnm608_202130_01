@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>CSSS StyleGuide</title>
+
+	<link rel="stylesheet" type="text/css" href="../lib/css/gridsystem.css">
+	<link rel="stylesheet" type="text/css" href="../lib/css/styleguide.css">
+	<link rel="stylesheet" type="text/css" href="../css/storetheme.css">
+    <link rel="stylesheet" href="https://use.typekit.net/jtb0szv.css">
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+	<header class="container">
+		<h1>CSS Style Guide</h1>
+    </header>
+
+    <section id="typoraphy" class="container">
+        <h3>Typography</h3>
+        <hr>
+        <div class="heading">Heading</div><br>
+        <div class="subheading">Subheading:Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div><br>
+        <div class="body1">Body text large size:Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </div><br>
+        <div class="body2">Body text small size:Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </div>
+    </section>
+    <br>
+	<section id="navs">
+		<script>
+		const makeNav = (classes='') => {
+			const links = ["Home","Products","About Us","Sign In/ Sign Up"];
+			let ran = Math.floor(Math.random()*links.length);
+			return `
+			<div class="card card-light">
+			    <nav class="${classes}">
+                    <ul>
+                        ${links.reduce((r,o,i)=>r+`<li ${i==ran&&`class="active"`}><a href="#">${o}
+                        	</a></li>`,"")}
+                    </ul>
+                </nav>
+            </div>`;
+         }
+		</script>
+		<div class="container">
+
+
+            <h3>Navs</h3>
+            <hr>
+            <script>document.write(makeNav("nav-pills"));</script>
+
+            <script>document.write(makeNav("nav-material"));</script>
+
+	    </div>
+
+        
+        <script>
+        	$(()=>{
+        		$("[class*='nav'] a").on("click",function(e){
+        			console.log("honk")
+        			e.preventDefault();
+        			$(this).closest("li").addClass("active")
+        			    .siblings().removeClass("active");
+        		})
+        	})
+        </script>
+	</section>
+    <br>
+
+    <section id="cards">
+        <div class="container">
+            <h3>Cards</h3>
+            <hr>
+            <h4>Products</h4>
+        <div class="productcard">
+           <img src="../img/candles1.png" alt="candle" style="width:100%">
+            <h4>Voluspa Maison Glass Candle</h4>
+            <p class="price">$30.28</p>
+            <p>Fresh Cantaloupe Hibiscus</p>
+            <p><button>Add to Cart</button></p>
+        </div>
+        </div>
+        <div class="container pad">
+            <h4>Texts</h4>
+       <div class="card card-soft card-light">
+        <h2>Section</h2>
+        <div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing, elit. Facere, ipsum temporibus perferendis enim sequi explicabo molestiae, labore necessitatibus commodi, expedita alias perspiciatis quibusdam, voluptas vero sint laboriosam provident placeat mollitia.</p>
+            <p>Deleniti distinctio doloremque, quos omnis asperiores accusantium reiciendis dignissimos assumenda quibusdam temporibus dolorem itaque eos quidem quam accusamus neque iusto, laboriosam quo velit voluptates aliquam soluta expedita consequatur. Libero, corporis.</p>
+            <p>Sequi ut asperiores quaerat quos at harum hic, reiciendis iusto dignissimos fugit excepturi eveniet blanditiis quam nemo dolores atque optio corrupti repudiandae vero delectus tenetur incidunt, fugiat, omnis molestias laboriosam.</p>
+            <p>Vel inventore qui illum, mollitia minima blanditiis optio amet sunt incidunt ipsa exercitationem ratione ullam ipsum quia doloribus, perspiciatis adipisci cumque, fugiat, alias provident! Ipsum suscipit nostrum tempore consequuntur earum!</p>
+        </div>
+    </div>
+   </div>
+
+   <div class="container pad">
+    <h4>Best Selling Iterm</h4>
+        <div class="card card-flat card-soft card-light">
+           <div class="grid">
+              <div class="col-cs-12 col-sm-6">
+                <img src="../img/Candles2.png" alt="candles2" class="image-cover">
+              </div>
+              <div class="col-xs-12 col-sm-6 center-child">
+                <div>
+                    <h3>Best Selling Iterms</h3>
+                    <p>Vel inventore qui illum, mollitia minima blanditiis optio amet sunt incidunt ipsa exercitationem ratione ullam ipsum quia doloribus, perspiciatis adipisci cumque, fugiat, alias provident! Ipsum suscipit nostrum tempore consequuntur earum!</p>
+                </div>
+              </div>
+           </div>
+        </div>
+   </div>
+   <div class="container pad">
+    <h4>Categories</h4>
+        <div class="grid gap">
+            <div class="col-md-4 col-sm-12">
+                <div class="card card-soft card-dark">
+                    <h3>Figure Title</h3>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, quas? Similique labore voluptatem dolore eaque.</p>
+                        <p>Officiis atque corporis vitae, nisi iusto temporibus, quos sunt tenetur aliquid, minima facere in et.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="card card-soft card-dark">
+                    <h3>Figure Title</h3>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, fugit cupiditate, enim natus nihil corporis.</p>
+                        <p>Corrupti aliquid fugit magni dignissimos dolore quo deleniti, accusamus totam iusto voluptatem, illum sequi officiis!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="card card-soft card-dark">
+                    <h3>Figure Title</h3>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, optio maiores fugiat non recusandae nisi?</p>
+                        <p>Aliquam quaerat tenetur dolorem, quisquam asperiores maxime nobis ullam, dicta. Quasi eaque eius ab reiciendis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
+    </section>
+    <br>
+
+
+	<section id="forms">
+		  <div class="container">
+
+        	<h3>Select</h3>
+            <hr>
+
+        	<div class="card card-light">
+        		<div class="form-select">
+        			<select name="amount">
+        				<option >1</option>
+        				<option >2</option>
+        				<option >3</option>
+        				<option >4</option>
+        				<option >5</option>
+        				<option >6</option>
+        				<option >7</option>
+        				<option >8</option>
+        				<option >9</option>
+        				<option >10</option>
+        			</select>
+        		</div>
+        	</div>
+            <br>
+
+        	<h3>Checkbox</h3>
+            <hr>
+        	<div class="card card-light">
+        		<div>
+        			<input type="checkbox" id="checkmark-1" class="hidden">
+        			<label for="checkmark-1" class="checkmark"></label>
+        		</div>
+
+        	</div>
+            <br>
+
+        	<h3>Button</h3>
+            <hr>
+        	<div class="card card-light">
+        		<div class="grid gap">
+        			<div class="col-xs-12 col-md-3">
+        				<input type="botton" class="form-botton" value="Qty">
+        			</div>
+                    <div class="col-xs-12 col-md-3">
+                        <button type="-" class="round-button">-</button>
+                    </div>
+                    <div class="col-xs-12 col-md-3">
+                        <button type="+" class="round-button">+</button>
+                    </div>
+        			<div class="col-xs-12 col-md-3">
+        				<button type="submit" class="form-button">Button</button>
+        			</div>
+                    <div class="col-xs-12 col-md-4">
+                        <button type="submit" class="form-button solid1">CHECKOUT</button>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                        <button type="submit" class="form-button border1">ADD TO BASKET</button>
+                    </div>
+        		</div>
+        	</div>
+            <br>
+
+
+        	<h3>Control</h3>
+            <hr>
+        	<div class="card card-light">
+        		<div class="form-control">
+        			<label for="input-1" class="form-label">Username</label>
+        			<input type="text" id="input-1" class="form-input" placeholder="username">
+        		</div>
+        		<div class="form-control">
+        			<label for="input-2" class="form-label">Password</label>
+        			<input type="text" id="input-2" class="form-input" placeholder="password">
+        		</div>
+        	</div>
+            <br>
+
+        	<h3>Search</h3>
+            <hr>
+        	<div class="card card-light">
+        		<input type="search" class="hotdog" placeholder="Search Products...">
+        	</div>
+
+        </div>
+
+	</section>	
+</body>
+</html>
